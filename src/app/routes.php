@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::any('/', 'HomeController@showWelcome');
 
 Route::get('users', function()
 {
