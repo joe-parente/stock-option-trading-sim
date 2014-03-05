@@ -10,11 +10,16 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::any('/', 'HomeController@showWelcome');
-
-Route::get('users', function()
-{
-    $users = User::all();
-    return View::make('users')->with('users', $users);
-});
+// Better to use explicit routes. Make the routes self documenting
+// instead of having to go to the controller to see what's going where. 
+Route::any('users/dashboard', 'UsersController@getDashboard');
+Route::any('users/register', 'UsersController@getRegister');
+Route::any('users/login', 'UsersController@getLogin');
+Route::any('users/create', 'UsersController@postCreate');
+Route::any('users/signin','UsersController@postSignin');
+Route::any('users/login/fb', 'UsersController@fbLogin');
+Route::any('users/login/fb/callback', 'UsersController@fbCallback');
+Route::any('users/logout', 'UsersController@getLogout');
+Route::any('users/resend', 'UsersController@getResend');
+//Route::controller('users', 'UsersController');
+Route::controller('/', 'HomeController');

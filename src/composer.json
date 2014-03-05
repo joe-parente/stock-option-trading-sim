@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-                "twitter/bootstrap": "2.3.2"
+                "twitter/bootstrap": "2.3.2",
+		"facebook/php-sdk": "*"
 	},
 	"autoload": {
 		"classmap": [
